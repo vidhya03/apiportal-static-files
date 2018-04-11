@@ -24,12 +24,29 @@ $(".header-example-schema").click(function (event) {
     }
    
 
-    headerExampleSchema.parent()
-   .closest(".schema-or-example").find(".header-example-schema");
+//     headerExampleSchema.parent()
+//    .closest(".schema-or-example").find(".header-example-schema");
 
-   headerExampleSchema.parent().parent()
-   .closest(".schema-or-example").find(".header-example-schema")
-   .removeClass("header-example-schema-activated");
+//    headerExampleSchema.parent().parent()
+//    .closest(".schema-or-example").find(".header-example-schema")
+//    .removeClass("header-example-schema-activated");
+console.log(headerExampleSchema.next());
+   var hasExp = headerExampleSchema.next().hasClass("exp");
+   if(hasExp){
+    headerExampleSchema.parent().parent().find(".exp").find(".header-example-schema")
+    .removeClass("header-example-schema-activated");
+
+    headerExampleSchema.parent().parent().find(".exp").find(".header-example-schema").next().hide();
+
+   }else{
+       console.log("on else");       
+       headerExampleSchema.parent().parent().find(".sch").find(".header-example-schema")
+       .removeClass("header-example-schema-activated");
+
+       headerExampleSchema.parent().parent().find(".sch").find(".header-example-schema").next().hide();
+
+   }
+  
    
    //$(".header-example-schema-activated").removeClass("header-example-schema-activated");
     headerExampleSchema.addClass("header-example-schema-activated");
