@@ -30,7 +30,7 @@ $(".header-example-schema").click(function (event) {
 //    headerExampleSchema.parent().parent()
 //    .closest(".schema-or-example").find(".header-example-schema")
 //    .removeClass("header-example-schema-activated");
-console.log(headerExampleSchema.next());
+// console.log(headerExampleSchema.next());
    var hasExp = headerExampleSchema.next().hasClass("exp");
    if(hasExp){
     headerExampleSchema.parent().parent().find(".exp").find(".header-example-schema")
@@ -39,7 +39,7 @@ console.log(headerExampleSchema.next());
     headerExampleSchema.parent().parent().find(".exp").find(".header-example-schema").next().hide();
 
    }else{
-       console.log("on else");       
+    //    console.log("on else");       
        headerExampleSchema.parent().parent().find(".sch").find(".header-example-schema")
        .removeClass("header-example-schema-activated");
 
@@ -64,7 +64,3 @@ $(".group-schema-example").hide();
 $(".header-example-schema").next().hide();
 $(".header-example-schema.header-example-schema-activated").next().show();
 
-
-$(".featured.module").filter(function (index, element) {
-    return index % 3 == 2;
-}).addClass("third");
